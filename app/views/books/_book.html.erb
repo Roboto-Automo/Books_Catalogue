@@ -1,17 +1,39 @@
+<%= stylesheet_link_tag('book')%>
+
 <div id="<%= dom_id book %>">
+<div class="book_container">
+
+    <div class="bk_entry">
   <p>
     <strong>Title:</strong>
     <%= book.title %>
   </p>
+    </div>
 
+    <div class="bk_entry">
   <p>
     <strong>Author:</strong>
     <%= book.author %>
   </p>
+</div>
 
+ <div class="bk_entry">
   <p>
     <strong>Rating:</strong>
     <%= book.rating %>
   </p>
-
+</div>
+ 
+ <div class="bk_entry">
+<p>
+  <%= button_to "Remove book", book_path(book), method: :delete %>
+</p>
+</div>
+ <div class="bk_entry">
+<p>
+ <%= button_to "Edit this book", edit_book_path(book), method: :get, id: dom_id(book) %>
+ </p>
+</div>
+</div>
+</div>
 </div>
