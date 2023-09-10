@@ -26,12 +26,12 @@
  
  <div class="bk_entry">
 <p>
-  <%= button_to "Remove book", book_path(book), method: :delete %>
+  <%= button_to "Remove book", book_path(book), method: :delete, class:"btn btn-outline-success" %>
 </p>
 </div>
  <div class="bk_entry">
 <p>
- <%= button_to "Edit this book", edit_book_path(book), method: :get, id: dom_id(book) %>
+ <%= button_to "Edit this book", edit_book_path(book), method: :get, id: dom_id(book), class:"btn btn-outline-success" %>
  </p>
 </div>
 </div>

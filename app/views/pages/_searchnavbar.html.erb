@@ -1,0 +1,20 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <form class="d-flex">
+      <%# <input class="form-control  me-2"type="search" placeholder="Search" aria-label="Search" > 
+      <button class="btn btn-outline-success" type="submit">Search</button> %>
+      
+      <%= search_form_for @q do |f| %>
+
+
+  <%=  f.search_field :title_cont, class:"form-control  me-2", placeholder:"Title Search" %> 
+
+   
+  <%= f.search_field :author_cont, class:"form-control  me-2", placeholder:"Author Search" %> 
+  <%= f.submit class:"btn btn-outline-success" %>
+  <%end%>
+
+    </form>
+    <%= link_to "Add new book", new_book_path, class:"btn btn-outline-success" %>
+  </div>
+</nav>
