@@ -1,18 +1,27 @@
-<div class="container">
+<%= stylesheet_link_tag('home')%>
+<div class="container" style="margin-top: 150px; 
+align-items: center; flex-direction: column; justify-content: center; display: flex;">
 
   <% if current_user %>
 
     <div class="row">
         <div class="col-md-12">
-        <h1>Home</h1>
-        <p>This is the home page.</p>
-<%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+        <h1>Welcome to Booksley</h1>
+       
+     
+
         </div>
     </div>
-    <%= link_to 'books', 'books#index'%>
-   
+    
+     <%= link_to 'Start cataloging your books', books_path, class:'btn btn-outline-success' %>
 </div>
 <%else%>
-<%= link_to 'Sign up', new_user_registration_path %>
-<%= link_to 'Log in', new_user_session_path %>
+<h1>Welcome to Booksley</h1>
+<div class="homepage">
+<h4>Booksley is a simple book catalogue app that allows you to keep track of the books you have read.</h4>
+<p>If you don't have an account, you can sign up for one below.</p>
+<%= link_to 'Sign up', new_user_registration_path, class:"btn btn-outline-success" %>
+<p>If you already have an account, please log in below.</p>
+<%= button_to 'Log in', new_user_session_path, class:"btn btn-outline-success" %>
+</div>
   <%end%>

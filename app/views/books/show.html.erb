@@ -2,9 +2,9 @@
 
 <%= render @book %>
 
-<div>
-  <%= button_to "Edit this book", edit_book_path(@book) %> |
-  <%= link_to "Back to books", books_path %>
+<div style="margin-top: 20px; align-items: center; justify-content: center; display: flex; ">
+ 
+  <%= link_to "Back to books", books_path, class:"btn btn-outline-success" %>
 
-  <%= button_to "Destroy this book", @book, method: :delete %>
+
 </div>
