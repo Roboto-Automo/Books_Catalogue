@@ -1,5 +1,7 @@
-<h2>Please Log in Sonny Jim</h2>
-
+<div class="container" style="width: 50%; margin: 100px auto; text-align: center;
+  border: 1px solid black; padding: 10px; background-color: #f2f2f2; border-radius: 10px; padding: 50px;">
+<h2>Please log in </h2>
+<br>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -17,10 +19,11 @@
       <%= f.label :remember_me %>
     </div>
   <% end %>
-
+<br>
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class:'btn btn-outline-success' %>
   </div>
 <% end %>
-
+<br>
 <%= render "devise/shared/links" %>
+</div>

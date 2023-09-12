@@ -41,8 +41,7 @@ class BooksController < ApplicationController
       if @book.update(book_params)
         format.html { redirect_to book_url(@book), notice: "Book was successfully updated." }
         format.json { render :show, status: :ok, location: @book }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
+      else format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end
@@ -50,11 +49,12 @@ class BooksController < ApplicationController
 
   # DELETE /books/1 or /books/1.json
   def destroy
+    @book = Book.find(params[:id])
     @book.destroy
-
-    respond_to do |format|
-      format.json { head :no_content }
-    end
+    redirect_to books_path
+    # respond_to do |format|
+    #   format.json { head :no_content }
+    # end
   end
 
   private
