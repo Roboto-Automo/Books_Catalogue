@@ -1,5 +1,6 @@
 # Booksley
 
+
 ## Practice application for Learning Ruby on Rails
 
 Booksley is a simple Crud application for cataloguing books by Title, Author and Rating. It is built with Ruby on Rails version 7 and has basic styling using Bootstrap 5.
@@ -14,3 +15,14 @@ Booksley is a simple Crud application for cataloguing books by Title, Author and
 
 Currently each logged in user is able to view, edit and delete all books. The next task is to add the ability for users to create their own books and only be able to view, edit and delete their own books.
 
+# Installation and Setup
+
+* Clone the repository
+*  cd into the directory
+*  run `bundle install`
+*  run `yarn install --check-files`
+*  rails db:create
+*  rails db:migrate RAILS_ENV=development
+*  rails db:seed
+*  rails s
+*  visit localhost:3000 in your browser
