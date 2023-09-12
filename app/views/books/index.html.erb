@@ -1,18 +1,23 @@
+<%= stylesheet_link_tag('link')%>
 <header>
-<%=render 'pages/searchnavbar'%>
+  <%= render 'pages/searchnavbar' %>
 </header>
 
 <p style="color: green"><%= notice %></p>
 
+
+<div id="alphabetical-index" style="text-align: center;">
+  <% @alphabet.each do |letter| %>
+    <%= link_to letter, books_path(letter: letter), class: 'green-link' %>
+  <% end %>
+</div>
+<br>
 <h1>My Book Catalogue</h1>
-
-
 
 <div id="books">
   <% @books.each do |book| %>
     <%= render book %>
     <p>
-      <%# <%= link_to "Show this book", book %> 
     </p>
   <% end %>
 </div>
