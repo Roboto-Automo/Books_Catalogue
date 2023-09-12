@@ -1,24 +1,11 @@
-# README
+# Booksley
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Practice application for Learning Ruby on Rails
 
-Things you may want to cover:
+Booksley is a simple Crud application for cataloguing books by Title, Author and Rating. It is built with Ruby on Rails version 7 and has basic styling using Bootstrap 5.
 
-* Ruby version
+* It uses the Ransack gem for searching and filtering books by title and author.
+* It uses the Devise gem for user authentication.
 
-* System dependencies
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
