@@ -4,15 +4,15 @@ class BooksController < ApplicationController
   # GET /books or /books.json
   def index
     @q = Book.ransack(params[:q])
-    
+   
     # Find books belonging to the current user
   user_books = current_user.books
   
   # Find books with a user ID of 1
   user_1_books = Book.where(user_id: 1)
-  
+
   # Merge the two sets of books using 'or'
-  @books = user_books.or(user_1_books).order(:title)
+  @books = @q.result.or(user_books.or(user_1_books)).order(:title)
   
     @alphabet = ('1'..'9').to_a + ('A'..'Z').to_a
     @selected_letter = params[:letter]
