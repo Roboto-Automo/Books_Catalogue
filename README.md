@@ -13,7 +13,7 @@ Booksley is a simple Crud application for cataloguing books by Title, Author and
 * Duplicate book entries are prevented by the validates_uniqueness_of method.
 
 
-Currently each logged in user is able to view, edit and delete all books. The next task is to add the ability for users to create their own books and only be able to view, edit and delete their own books.
+Multiple user accounts can be made. Each logged in user is only able to view, edit and delete books they have created. They are not able to view, edit or delete books created by other users.  The seed data however can be seen/edited and deleted by all users, but is only there as a useful starting point for testing the application.
 
 # Installation and Setup
 
