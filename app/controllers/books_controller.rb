@@ -4,7 +4,15 @@ class BooksController < ApplicationController
   # GET /books or /books.json
   def index
     @q = Book.ransack(params[:q])
-    @books = @q.result.order(:title) # Assuming "title" is the attribute by which you want to sort alphabetically
+    
+    # Find books belonging to the current user
+  user_books = current_user.books
+  
+  # Find books with a user ID of 1
+  user_1_books = Book.where(user_id: 1)
+  
+  # Merge the two sets of books using 'or'
+  @books = user_books.or(user_1_books).order(:title)
   
     @alphabet = ('1'..'9').to_a + ('A'..'Z').to_a
     @selected_letter = params[:letter]
@@ -13,8 +21,11 @@ class BooksController < ApplicationController
       @books = @books.where("title LIKE ?", "#{@selected_letter}%")
     end
   end
-  # GET /books/1 or /books/1.json
+  
+  # GET /books/1
   def show
+    @book = current_user.books.find_by(id: params[:id]) || Book.find_by(id: params[:id], user_id: 1)
+
   end
 
   # GET /books/new
@@ -29,7 +40,10 @@ class BooksController < ApplicationController
   # POST /books or /books.json
   def create
     @book = Book.new(book_params)
-
+    
+    # Associate the currently signed-in user with the book
+    @book.user = current_user
+  
     respond_to do |format|
       if @book.save
         format.html { redirect_to book_url(@book), notice: "Book was successfully created." }
