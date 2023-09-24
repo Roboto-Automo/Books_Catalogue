@@ -1,39 +1,56 @@
-<%= stylesheet_link_tag('book')%>
+<%= stylesheet_link_tag('book') %>
 
 <div id="<%= dom_id book %>">
-<div class="book_container">
-
+<div class="container1">
+  <div class="book_container">
     <div class="bk_entry">
-  <p>
-    <strong>Title:</strong>
-    <%= book.title %>
-  </p>
+      <p>
+        <strong>Title:</strong>
+        <%= book.title %>
+      </p>
     </div>
 
     <div class="bk_entry">
-  <p>
-    <strong>Author:</strong>
-    <%= book.author %>
-  </p>
-</div>
+      <p>
+        <strong>Author:</strong>
+        <%= book.author %>
+      </p>
+    </div>
 
- <div class="bk_entry">
-  <p>
-    <strong>Rating:</strong>
-    <%= book.rating %>
-  </p>
-</div>
- 
- <div class="bk_entry">
-<p>
-  <%= button_to "Remove book", book_path(book), method: :delete,id: dom_id(book), class:"btn btn-outline-success" %>
-</p>
-</div>
- <div class="bk_entry">
-<p>
- <%= button_to "Edit this book", edit_book_path(book), method: :get, id: dom_id(book), class:"btn btn-outline-success" %>
- </p>
-</div>
-</div>
+    <div class="bk_entry">
+      <p>
+        <strong>Rating:</strong>
+        <%= book.rating %>
+      </p>
+    </div>
+
+    <div class="bk_entry">
+      <p>
+        <%= button_to "Remove book", book_path(book), method: :delete, id: dom_id(book), class: "btn btn-outline-success" %>
+      </p>
+    </div>
+
+    <div class="bk_entry">
+      <p>
+        <%= button_to "Edit this book", edit_book_path(book), method: :get, id: dom_id(book), class: "btn btn-outline-success" %>
+      </p>
+    </div>
+  </div>
+
+  
+    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%= dom_id(book) %>" aria-expanded="false" aria-controls="collapse_<%= dom_id(book) %>">
+      <%= book.title %>: Synopsis
+    </button>
+  </div>
+
+  <div class="accordion" id="accordion_<%= dom_id(book) %>">
+    <div class="accordion-item">
+      <div id="collapse_<%= dom_id(book) %>" class="accordion-collapse collapse" aria-labelledby="heading_<%= dom_id(book) %>" data-bs-parent="#accordion_<%= dom_id(book) %>">
+        <div class="accordion-body">
+          <strong>This is the synopsis for the book: <%= book.title %></strong>
+       <p><%= book.synopsis%></p>
+      </div>
+    </div>
+  </div>
 </div>
 </div>

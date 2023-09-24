@@ -26,6 +26,11 @@
     <%= form.number_field :rating %>
   </div>
 
+   <div>
+    <%= form.label :synopsis, style: "display: block" %>
+    <%= form.text_area :synopsis %>
+  </div>
+
   <div style="margin-top: 20px; align-items: center; justify-content: center; display: flex; flex-direction: column;">  
     <%= form.submit class: "btn btn-outline-success" %>
   </div>
