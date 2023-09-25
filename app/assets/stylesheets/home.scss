@@ -19,7 +19,16 @@
   padding-bottom: 50px;
   padding-top: 50px;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.banner2 {
+  background-image: url("libraryimage.jpg");
+  background-size: 1300px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .Welcome {
@@ -35,6 +44,34 @@
 .homepage{
     background-color: rgba(255, 255, 255, 0.663);
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 10px;
     width:100%;
 }
+
+.col-md-12 {
+    font-size: 70px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.715);
+    padding-bottom: 20px;
+    padding-top: 20px;
+    color: white;
+}
+
+.row {
+    margin-bottom: 0px;
+    width: 80%;
+}
+
+.linkbox{
+    background-color: rgba(255, 255, 255, 0.715);
+    padding: 80px;
+    width:80%;
+    border-radius: 0px 0px 10px 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.custom-btn {
+    font-size: 2rem; 
+    padding: 20px 40px; 
+  }

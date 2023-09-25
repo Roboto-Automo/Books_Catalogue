@@ -5,14 +5,16 @@ align-items: center; flex-direction: column; justify-content: center; display: f
   <% if current_user %>
 
     <div class="row">
+      <div class="banner2">
         <div class="col-md-12">
-        <h1 >Welcome to Booksley</h1>
-       
+        <h1 >You're a Booksley member now!</h1>
+       </div>
         </div>
-       
+  
     </div>
-  <br>
-     <%= link_to 'Start cataloging your books', books_path, class:'btn btn-outline-success' %>
+  <div class="linkbox">
+     <%= link_to 'Start cataloguing your books', books_path, class:'btn btn-outline-success custom-btn ' %>
+     </div>
 </div>
 <%else%>
 <div class="banner">
