@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag('link')%>
+<%= stylesheet_link_tag('index')%>
 <header>
   <%= render 'pages/searchnavbar' %>
 </header>
@@ -8,12 +9,12 @@
 
 <div id="alphabetical-index" style="text-align: center;">
   <% @alphabet.each do |letter| %>
-    <%= link_to letter, books_path(letter: letter), class: 'green-link' %>
+    <%= link_to letter, books_path(letter: letter), class: 'black-link' %>
   <% end %>
 </div>
-<br>
-<h1>My Book Catalogue</h1>
-
+<div class="mycataloguecontainer"> 
+<h1 class="mycatalogue">My Book Catalogue</h1>
+</div>
 <div id="books">
   <% @books.each do |book| %>
     <%= render book %>

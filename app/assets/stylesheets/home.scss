@@ -1,17 +1,40 @@
 .container {
-
-   margin-top: 100px;
+  margin-top: 100px;
 }
 
 .homepage {
-
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .homepage h4 {
+  text-align: center;
+}
 
-    text-align: center;
+.banner {
+  background-image: url("libraryimage.jpg");
+  background-size: 1300px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.Welcome {
+  font-size: 70px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.715);
+
+  padding-bottom: 20px;
+  padding-top: 20px;
+  color: white;
+}
+
+.homepage{
+    background-color: rgba(255, 255, 255, 0.663);
+    padding: 30px;
+    border-radius: 10px;
+    width:100%;
 }

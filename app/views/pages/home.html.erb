@@ -6,7 +6,7 @@ align-items: center; flex-direction: column; justify-content: center; display: f
 
     <div class="row">
         <div class="col-md-12">
-        <h1>Welcome to Booksley</h1>
+        <h1 >Welcome to Booksley</h1>
        
         </div>
        
@@ -15,8 +15,9 @@ align-items: center; flex-direction: column; justify-content: center; display: f
      <%= link_to 'Start cataloging your books', books_path, class:'btn btn-outline-success' %>
 </div>
 <%else%>
-<h1>Welcome to Booksley</h1>
-<br>
+<div class="banner">
+<h1 class="Welcome">Welcome to Booksley</h1>
+</div>
 <div class="homepage">
 <h4>Booksley is a simple solution allowing you to easily keep track of the books you have read.</h4>
 <br>
