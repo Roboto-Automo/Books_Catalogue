@@ -21,7 +21,7 @@
 <div class="buttonsbox">
     <div class="bk_entry2" style="margin-bottom:10px">
       <p>
-        <%= button_to "Remove book", book_path(book), method: :delete, id: dom_id(book), class: "btn btn-outline-success" %>
+        <%= button_to "Remove book", book_path(book), method: :delete, id: dom_id(book), class: "btn btn-outline-success", data: { "turbo-confirm": 'Are you sure you want to delete this book?' } %>
       </p>
     </div>
 
@@ -35,7 +35,7 @@
 
   
     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%= dom_id(book) %>" aria-expanded="false" aria-controls="collapse_<%= dom_id(book) %>">
-      <%= book.title %>: Synopsis
+      <%= book.title %>: Review
     </button>
   </div>
 
@@ -43,7 +43,7 @@
     <div class="accordion-item">
       <div id="collapse_<%= dom_id(book) %>" class="accordion-collapse collapse" aria-labelledby="heading_<%= dom_id(book) %>" data-bs-parent="#accordion_<%= dom_id(book) %>">
         <div class="accordion-body">
-          <strong>This is the synopsis for the book: <%= book.title %></strong>
+          <strong>This is my review for the book: <%= book.title %></strong>
        <p><%= book.synopsis%></p>
       </div>
     
