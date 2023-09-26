@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light bg-light" >
-  <div class="container-fluid" >
-    <form class="d-flex">
+  <div class="container-fluid d-flex justify-content-center" >
+    <form class="d-flex", style="margin-right:15px">
       <%# <input class="form-control  me-2"type="search" placeholder="Search" aria-label="Search" > 
       <button class="btn btn-outline-success" type="submit">Search</button> %>
       
@@ -11,16 +11,17 @@
 
    
   <%= f.search_field :author_cont, class:"form-control  me-2", placeholder:"Author Search" %> 
-
-
+  
 
 <%= f.select :rating_eq,Book.distinct.order(:rating).pluck(:rating),{ prompt: "Select Rating" }, class:"form-control  me-2" %> 
-<%= link_to 'Reset', books_path, class:"btn btn-outline-success", style:"margin-right: 10px;" %>
+
   <%= f.submit class:"btn btn-outline-success" %>
   
   <%end%>
-
     </form>
+    <div>
+    <%= link_to 'Reset', books_path, class:"btn btn-outline-success", style:"margin-right: 10px;" %>
     <%= link_to "Add new book", new_book_path, class:"btn btn-outline-success" %>
+    </div>
   </div>
 </nav>

@@ -1,6 +1,9 @@
 .container1 {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  text-align: center;
   margin-left: 80px;
   margin-right: 80px;
   border-radius: 15px;
@@ -52,8 +55,6 @@
   .bk_entry2 {
     padding-top: 5px;
     padding-left: 5px;
-    
-  
   }
 
   .buttonsbox {
@@ -109,4 +110,43 @@
 
 .accordion-button:not(.collapsed)::after {
   filter: brightness(0) invert(1);
+}
+
+
+@media (max-width: 1300px) {
+  .book_container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .container1 {
+    min-width: 445px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .bk_entrytitle {
+    min-width: 400px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+
+  .buttonsbox {
+  margin-left: 0px;
+  }
+
+  .bk_entry2 {
+   margin-right: 15px;
+   
+  }
+
+  .accordion-item {
+    margin-left: 5px;
+    margin-right: 5px;
+    border: none;
+  }
 }
